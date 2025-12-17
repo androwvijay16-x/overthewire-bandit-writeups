@@ -1,0 +1,13 @@
+# Bandit Level 0
+
+## Goal:
+Find the password for Level 1.
+
+## Steps:
+
+1. **Log into Bandit Level 0**:
+
+   Use the following command to connect to the server:
+
+   ```bash
+   ssh bandit0@bandit.labs.overthewire.org -p 2220
