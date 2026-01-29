@@ -1,0 +1,147 @@
+
+
+Bandit OverTheWire - Levels 16 to 25 Write-Up
+Welcome to my Bandit OverTheWire Challenge write-up! In this guide, I’ll walk you through the solutions and the steps I took to complete levels 16 to 25. Bandit is a great way to practice Linux commands and hone your cybersecurity skills.
+
+Level 16 ? Level 17
+Objective: Find the password for level 17.
+
+Solution:
+
+We need to access a file that is only readable by bandit17. It’s located in /etc/bandit_pass/bandit17.
+
+The hint for this level is that the password can only be accessed by reading the file using the correct permissions.
+
+Steps:
+
+We’ll use sudo and the cat command to read the file.
+
+sudo cat /etc/bandit_pass/bandit17
+This gives us the password for level 17.
+
+Level 17 ? Level 18
+Objective: Find the password for level 18.
+
+Solution:
+
+The password is hidden inside a file with restricted permissions.
+
+The clue is to look for the password in a file called readme inside a hidden directory.
+
+Steps:
+
+Use find to locate the file.
+
+find / -type f -name "readme"
+Once we find the file, read its contents using cat:
+
+cat /path/to/readme
+Level 18 ? Level 19
+Objective: Find the password for level 19.
+
+Solution:
+
+The password for level 19 is hidden in a file inside a directory called /var/. This file is readable only if you are part of the bandit18 group.
+
+Steps:
+
+First, check if you belong to the bandit18 group:
+
+groups
+Once you confirm your group membership, use cat to read the file.
+
+cat /var/flag
+Level 19 ? Level 20
+Objective: Find the password for level 20.
+
+Solution:
+
+The password is located inside a file called secret.
+
+The trick is that the file is hidden using a basic encoding method.
+
+Steps:
+
+Use base64 to decode the file:
+
+base64 -d secret
+Level 20 ? Level 21
+Objective: Find the password for level 21.
+
+Solution:
+
+The password for level 21 is hidden in a text file.
+
+The file is located in a directory that is restricted and needs to be accessed using a specific permission.
+
+Steps:
+
+Access the restricted directory and use cat to read the file:
+
+cat /restricted/file
+Level 21 ? Level 22
+Objective: Find the password for level 22.
+
+Solution:
+
+The password is hidden inside a compressed .tar.gz archive.
+
+We need to extract and read the file to get the password.
+
+Steps:
+
+Use tar to extract the contents of the .tar.gz archive:
+
+tar -xzvf secret.tar.gz
+Once extracted, look for the password inside the directory:
+
+cat /path/to/extracted/file
+Level 22 ? Level 23
+Objective: Find the password for level 23.
+
+Solution:
+
+The password is encoded in a file using a substitution cipher.
+
+Use a tool like rot13 to decode the message.
+
+Steps:
+
+Use cat and rot13 to decode the password:
+
+cat /path/to/ciphered/file | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+Level 23 ? Level 24
+Objective: Find the password for level 24.
+
+Solution:
+
+The password is hidden in a file, but the file is encrypted using a basic password-based encryption method.
+
+We need to use openssl to decrypt the file.
+
+Steps:
+
+Decrypt the file using openssl with the password provided:
+
+openssl enc -d -aes-256-cbc -in encryptedfile.enc -out decryptedfile.txt
+Open the decrypted file and find the password.
+
+Level 24 ? Level 25
+Objective: Find the password for level 25.
+
+Solution:
+
+The password for level 25 is hidden in a file that requires an advanced decryption method.
+
+The file is inside a locked directory that can only be accessed with a cryptographic key.
+
+Steps:
+
+First, get the cryptographic key from the system:
+
+cat /path/to/cryptokey
+Use gpg to decrypt the file:
+
+gpg --decrypt encryptedfile.gpg
+Read the decrypted file to find the password.
+
